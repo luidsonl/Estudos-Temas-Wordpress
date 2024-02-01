@@ -1,0 +1,22 @@
+/*
+Theme Name: Scratch Theme
+Author: luidsonl
+Version: 1.0
+Description: This is a theme created in order to learn more about wordpress themes. Based on the course - https://www.youtube.com/playlist?list=PLY3j36HMSHNX5JbYBrpN5ZFC6dbFBY2s_ 
+
+Author URI: https://github.com/luidsonl
+*/
+
+/*All images*/
+img{
+    max-width: 100%;
+}
+
+/*Pagination*/
+.navigation.pagination{
+    font-size: 1.3em;
+    
+}
+.navigation.pagination a{
+    text-decoration: none;
+}
