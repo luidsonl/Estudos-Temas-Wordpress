@@ -26,6 +26,8 @@ if (has_post_thumbnail()) {
 } else {
     $thumbnail_url = esc_url(get_template_directory_uri() . '/assets/images/default_image_placeholder.png');
 }
+$cat_list = get_the_category();
+$tag_list = get_the_tags();
 ?>
 <div class="col-md-6">
   <div class="card m-4 shadow border">
@@ -38,6 +40,21 @@ if (has_post_thumbnail()) {
       <div class="card-body">
         <h5 class="card-title"><?php the_title(); ?></h5>
         <p class="card-text"><?php echo strip_tags(get_the_excerpt()); ?></p>
+        <div class="card-body">
+        
+        <div class="border-top mt-2 row">
+                <div class="col-md-6">
+                    <?php foreach($cat_list as $cat): ?>
+                        <a href="<?php echo get_category_link($cat->term_id);?>" class="small me-1"><?php echo $cat->name;?> </a> 
+                    <?php endforeach; ?>
+                </div>
+                <div class="col-md-6 text-end">
+                    <?php foreach($tag_list as $tag): ?>
+                        <a href="<?php echo get_tag_link($tag->term_id);?>" class="small me-1">#<?php echo $tag->name;?> </a> 
+                    <?php endforeach; ?>
+                </div>
+            </div>
+      </div>
       </div>
     </a>
   </div>

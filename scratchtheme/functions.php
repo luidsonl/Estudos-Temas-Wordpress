@@ -48,13 +48,12 @@ function enqueue_bootstrap() {
 }
 
 function get_menu_items( $theme_location ) {
-    if ( ($theme_location) && ($locations = get_nav_menu_locations()) && isset($locations[$theme_location]) ) {
-		
+    if ( $theme_location && ($locations = get_nav_menu_locations()) && $locations[$theme_location] != 0 ) {
 		
         $menu = get_term( $locations[$theme_location], 'nav_menu' );
         $menu_items = wp_get_nav_menu_items($menu->term_id);
     
-    return $menu_items;
+        return $menu_items;
     }else{
         return array();
     }
