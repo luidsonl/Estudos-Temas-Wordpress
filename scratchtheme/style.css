@@ -6,6 +6,14 @@ Description: This is a theme created in order to learn more about wordpress them
 
 Author URI: https://github.com/luidsonl
 */
+/*general*/
+html, body{
+    min-height: 100vh;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
 
 /*All images*/
 img{
@@ -17,6 +25,8 @@ img{
     font-size: 1.3em;
     
 }
+/*links*/
 a{
     text-decoration: none;
 }
+

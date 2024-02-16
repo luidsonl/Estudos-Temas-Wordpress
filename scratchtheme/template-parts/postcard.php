@@ -49,9 +49,11 @@ $tag_list = get_the_tags();
                     <?php endforeach; ?>
                 </div>
                 <div class="col-md-6 text-end">
+                  <?php if(is_array($tag_list)): ?>
                     <?php foreach($tag_list as $tag): ?>
                         <a href="<?php echo get_tag_link($tag->term_id);?>" class="small me-1">#<?php echo $tag->name;?> </a> 
                     <?php endforeach; ?>
+                  <?php endif; ?>
                 </div>
             </div>
       </div>
