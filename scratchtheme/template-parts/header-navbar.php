@@ -55,7 +55,7 @@ $menu_items = get_menu_items('header-menu');
             <?php endif; ?>
           <?php endforeach; ?>
         </ul>
-        <form class="d-flex" role="search" action='<?php echo get_home_url(); ?>'>
+        <form class="d-flex ms-auto" role="search" action='<?php echo get_home_url(); ?>'>
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name='s'>
           <button class="btn btn-outline-success" type="submit">Buscar</button>
         </form>

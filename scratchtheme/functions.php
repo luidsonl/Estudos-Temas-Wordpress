@@ -19,7 +19,6 @@ function theme_setup() {
         array(
           'header-menu' =>  'Header Menu',
           'footer-menu' => 'Footer Menu',
-          'sidebar-menu' => 'Sidebar Menu'
         )
     );
 }
@@ -64,22 +63,224 @@ function get_menu_items( $theme_location ) {
     }
 }
 
-function home_page_layout_customizer($wp_customize){
+function footer_customizer($wp_customize){
     $wp_customize->add_section(
         'footer',
         array(
-            'title' => __('Footer', 'scratch'),
+            'title' => __('Footer'),
             'priority' => 201
         )
     );
-    $wp_customize->add_setting('copyright');
+    $wp_customize->add_setting('copyright',
+        array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'transport' => 'refresh', 
+        'sanitize_callback' => 'sanitize_text_field',
+      ));
     $wp_customize->add_control(
         'copyright',
         array(
-            'label'=>__('Copyright', 'scratch'),
-            'section'=> 'footer'
+            'label'=>__('Copyright'),
+            'section'=> 'footer',
+            'type'     => 'text'
         )
     );
 }
 
-add_action('customize_register', 'home_page_layout_customizer');
+function slider_customizer($wp_customize){
+    $wp_customize->add_section(
+        'slider',
+        array(
+            'title' => __('Slider'),
+            'description' => __('Set slider'),
+            'priority' => 202
+        )
+    );
+
+    // slider 1
+    $wp_customize->add_setting('slider_banner_1', 
+    array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field', 
+      ));
+    $wp_customize->add_control(
+        new WP_Customize_Cropped_Image_Control(
+            $wp_customize,
+            'slider_banner_1',
+            array(
+                'label'      => __( 'Image to banner 1'),
+                'section'    => 'slider',
+                'settings'   => 'slider_banner_1',
+                'context'    => 'setting context',
+                'height'=>200,
+                'width'=>1000,
+                'flex_height'=> false,
+                'flex_width'=> false,
+            )
+        )
+    );
+    $wp_customize->add_setting('slider_label_1',
+    array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'transport' => 'refresh', 
+        'sanitize_callback' => 'sanitize_text_field',
+      ));
+
+    $wp_customize->add_control(
+        'slider_label_1',
+        array(
+            'label'=>__('Text to label 1'),
+            'section'=> 'slider',
+            'type'     => 'text'
+        )
+    );
+    $wp_customize->add_setting('slider_content_1',
+    array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'transport' => 'refresh', 
+        'sanitize_callback' => 'sanitize_text_field',
+      ));
+
+    $wp_customize->add_control( 
+        'slider_content_1',
+        array(
+            'label'    => 'Text to content 1',
+            'section'  => 'slider',
+            'type'     => 'textarea',
+        )
+    );
+    
+    // slider 2
+    $wp_customize->add_setting('slider_banner_2',
+    array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+      ));
+
+      $wp_customize->add_control(
+        new WP_Customize_Cropped_Image_Control(
+            $wp_customize,
+            'slider_banner_2',
+            array(
+                'label'      => __( 'Image to banner 2'),
+                'section'    => 'slider',
+                'settings'   => 'slider_banner_2',
+                'context'    => 'setting context',
+                'height'=>200,
+                'width'=>1000,
+                'flex_height'=> false,
+                'flex_width'=> false,
+            )
+        )
+    );
+    $wp_customize->add_setting('slider_label_2',
+    array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'transport' => 'refresh', 
+        'sanitize_callback' => 'sanitize_text_field',
+      ));
+
+    $wp_customize->add_control(
+        'slider_label_2',
+        array(
+            'label'=>__('Text to label 2'),
+            'section'=> 'slider',
+            'type'     => 'text'
+        )
+    );
+    $wp_customize->add_setting('slider_content_2',
+    array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'transport' => 'refresh', 
+        'sanitize_callback' => 'sanitize_text_field',
+      ));
+
+    $wp_customize->add_control( 
+        'slider_content_2',
+        array(
+            'label'    => 'Text to content 2',
+            'section'  => 'slider',
+            'type'     => 'textarea',
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+    // slider 3
+    $wp_customize->add_setting('slider_banner_3',
+    array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+      ));
+
+      $wp_customize->add_control(
+        new WP_Customize_Cropped_Image_Control(
+            $wp_customize,
+            'slider_banner_3',
+            array(
+                'label'      => __( 'Image to banner 3'),
+                'section'    => 'slider',
+                'settings'   => 'slider_banner_3',
+                'context'    => 'setting context',
+                'height'=>200,
+                'width'=>1000,
+                'flex_height'=> false,
+                'flex_width'=> false,
+            )
+        )
+    );
+    $wp_customize->add_setting('slider_label_3',
+    array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'transport' => 'refresh', 
+        'sanitize_callback' => 'sanitize_text_field',
+      ));
+
+    $wp_customize->add_control(
+        'slider_label_3',
+        array(
+            'label'=>__('Text to label 3'),
+            'section'=> 'slider',
+            'type'     => 'text'
+        )
+    );
+    $wp_customize->add_setting('slider_content_3',
+    array(
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'transport' => 'refresh', 
+        'sanitize_callback' => 'sanitize_text_field',
+      ));
+
+    $wp_customize->add_control( 
+        'slider_content_3',
+        array(
+            'label'    => 'Text to content 3',
+            'section'  => 'slider',
+            'type'     => 'textarea',
+        )
+    );
+}
+
+add_action('customize_register', 'footer_customizer');
+add_action('customize_register', 'slider_customizer');

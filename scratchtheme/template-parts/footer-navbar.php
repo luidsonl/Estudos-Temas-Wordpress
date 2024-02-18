@@ -4,8 +4,8 @@ $menu_items = get_menu_items('footer-menu');
 
 
         
-<nav class="navbar navbar-expand-lg">
-    <ul class="navbar-nav me-auto">
+<nav class="navbar">
+    <ul class="navbar-nav">
         <?php foreach($menu_items as $menu_item): ?>
 
         <?php
