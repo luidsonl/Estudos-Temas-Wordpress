@@ -24,7 +24,9 @@ services:
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DEBUG: 'true'
     volumes:
-      - './scratchtheme:/var/www/html/wp-content/themes/scratchtheme:rw'
+      - './scratchtheme:/var/www/html/wp-content/themes/scratchtheme:ro'
+      - './timber:/var/www/html/wp-content/themes/timber:ro'
+      - './custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini:ro'
 
   adminer:
     image: adminer
