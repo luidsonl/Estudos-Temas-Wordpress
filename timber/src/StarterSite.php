@@ -2,6 +2,8 @@
 
 use Timber\Site;
 
+require_once __DIR__ . '/customizers.php';
+
 /**
  * Class StarterSite
  */
@@ -10,6 +12,8 @@ class StarterSite extends Site {
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', array( $this, 'add_customizers' ) );
+		
 
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
@@ -17,6 +21,12 @@ class StarterSite extends Site {
 
 		parent::__construct();
 	}
+
+	// Register customizers
+	public function add_customizers(){
+		add_action('customize_register', 'general_customizer');
+	}
+
 
 	/**
 	 * This is where you can register custom post types.
@@ -41,35 +51,24 @@ class StarterSite extends Site {
 		$context['foo']   = 'bar';
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::context();';
-		$context['menu']  = Timber::get_menu();
+		$context['menu']  = Timber::get_menu('header-menu');
 		$context['site']  = $this;
+
+		// styles
+		$context['content_margin'] = get_theme_mod('content_margin', 0);
 
 		return $context;
 	}
 
+	//Theme Supports
 	public function theme_supports() {
-		// Add default posts and comments RSS feed links to head.
+
 		add_theme_support( 'automatic-feed-links' );
 
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
 		add_theme_support( 'title-tag' );
 
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
 		add_theme_support( 'post-thumbnails' );
 
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
 		add_theme_support(
 			'html5',
 			array(
@@ -80,11 +79,6 @@ class StarterSite extends Site {
 			)
 		);
 
-		/*
-		 * Enable support for Post Formats.
-		 *
-		 * See: https://codex.wordpress.org/Post_Formats
-		 */
 		add_theme_support(
 			'post-formats',
 			array(
@@ -99,6 +93,24 @@ class StarterSite extends Site {
 		);
 
 		add_theme_support( 'menus' );
+
+		register_nav_menus(
+			array(
+			  'header-menu' =>  'Header Menu',
+			  'footer-menu' => 'Footer Menu',
+			)
+		);
+
+		add_theme_support( 'custom-logo', array(
+			'height'               => 100,
+			'width'                => 400,
+			'flex-height'          => true,
+			'flex-width'           => true,
+			'header-text'          => array( 'site-title', 'site-description' ),
+			'unlink-homepage-logo' => true,
+			) 
+		);
+		
 	}
 
 	/**
