@@ -65,7 +65,7 @@ function general_customizer($wp_customize){
     ));
 
     $wp_customize->add_control('content_padding_x', array(
-        'label' => __('Body Margin X', 'textdomain'),
+        'label' => __('Body Padding X', 'textdomain'),
         'section' => 'content_section',
         'type' => 'number',
         'settings' =>'content_padding_x',
@@ -81,7 +81,7 @@ function general_customizer($wp_customize){
         'capability' => 'edit_theme_options',
         'default' => '#bbb',
         'transport' => 'refresh', 
-        'sanitize_callback' => 'absint',
+        'sanitize_callback' => 'sanitize_hex_color',
     ));
 
     $wp_customize->add_control('body_bg_color', array(
@@ -96,7 +96,7 @@ function general_customizer($wp_customize){
         'capability' => 'edit_theme_options',
         'default' => '#fff',
         'transport' => 'refresh', 
-        'sanitize_callback' => 'absint',
+        'sanitize_callback' => 'sanitize_hex_color',
     ));
 
     $wp_customize->add_control('content_bg_color', array(

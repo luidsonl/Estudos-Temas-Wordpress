@@ -58,7 +58,7 @@ class StarterSite extends Site {
 
 		// styles
 		$context['content_margin_x'] = get_theme_mod('content_margin_x', 20);
-		$context['content_padding_x'] = get_theme_mod('content_padding_x', 0);
+		$context['content_padding_x'] = get_theme_mod('content_padding_x', 20);
 
 		$context['body_bg_color'] = get_theme_mod('body_bg_color', '#bbb');
 		$context['content_bg_color'] = get_theme_mod('content_bg_color', '#fff');
