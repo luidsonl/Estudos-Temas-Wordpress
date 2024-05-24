@@ -12,9 +12,10 @@ class StarterSite extends Site {
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
-		add_action( 'init', array( $this, 'add_customizers' ) );
 		
-
+		add_action( 'init', array( $this, 'add_customizers' ) );
+		add_action( 'init', array( $this, 'register_custom_controls' ) );
+		
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_filter( 'timber/twig/environment/options', [ $this, 'update_twig_environment_options' ] );
@@ -53,14 +54,19 @@ class StarterSite extends Site {
 		$context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['menu']  = Timber::get_menu('header-menu');
 		$context['site']  = $this;
+		$context['is_customize_preview'] = is_customize_preview();
 
 		// styles
-		$context['content_margin'] = get_theme_mod('content_margin', 0);
+		$context['content_margin_x'] = get_theme_mod('content_margin_x', 20);
+		$context['content_padding_x'] = get_theme_mod('content_padding_x', 0);
 
+		$context['body_bg_color'] = get_theme_mod('body_bg_color', '#bbb');
+		$context['content_bg_color'] = get_theme_mod('content_bg_color', '#fff');
+		
 		return $context;
 	}
 
-	//Theme Supports
+	// Theme Supports
 	public function theme_supports() {
 
 		add_theme_support( 'automatic-feed-links' );

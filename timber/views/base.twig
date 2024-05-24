@@ -3,9 +3,15 @@
 {% include 'html-header.twig' %}
 	{% block head %}
 		<style>
+			body{
+				background-color: {{ body_bg_color }};
+			}
 			#content{
-				margin-left: {{ content_margin }}{{'px'}};
-				margin-right: {{ content_margin }}{{'px'}};
+				background-color: {{ content_bg_color }};
+				margin-left: {{ content_margin_x }}{{'px'}};
+				margin-right: {{ content_margin_x }}{{'px'}};
+				padding-left: {{ content_padding_x }}{{'px'}};
+				padding-right: {{ content_padding_x }}{{'px'}};
 			}
 		
 		</style>
@@ -13,6 +19,7 @@
 	
 {% endblock %}
 	<body class="{{body_class}}" data-template="base.twig">
+		
 		{{ function('wp_body_open') }}
 		<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
 		<header class="header" >
@@ -47,6 +54,10 @@
 				{% include 'footer.twig' %}
 			</footer>
 			{{ function('wp_footer') }}
+		{% endblock %}
+
+		{% block scripts %}
+			
 		{% endblock %}
 	</body>
 </html>
