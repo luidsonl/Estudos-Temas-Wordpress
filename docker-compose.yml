@@ -26,6 +26,7 @@ services:
     volumes:
       - './scratchtheme:/var/www/html/wp-content/themes/scratchtheme:ro'
       - './timber:/var/www/html/wp-content/themes/timber:ro'
+      - './rwiact:/var/www/html/wp-content/themes/rwiact:ro'
       - './custom-php.ini:/usr/local/etc/php/conf.d/custom-php.ini:ro'
 
   adminer:
