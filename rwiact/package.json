@@ -1,0 +1,16 @@
+{
+  "name": "rwiact",
+  "version": "1.0.0",
+  "description": "a react based wordpress block theme",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "luidsonl",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^30.14.0"
+  }
+}

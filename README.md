@@ -7,4 +7,7 @@
 
 # [RwiAct](./rwiact/)
 * Um FSE Block Theme feito com React.js
-* Baseado no [tutorial](https://www.youtube.com/watch?v=C088o0O7Snc)
+* Baseado nos tutoriais 
+- [ WordPress Block Themes And Full Site Editing: Explanation for Developers ](https://www.youtube.com/watch?v=C088o0O7Snc)
+- [ React In WordPress Boilerplate (Both Gutenberg Block Types & Front-End) ](https://www.youtube.com/watch?v=NKqogVcqDHA) 
+- [ WordPress Block Theme Development ](https://www.youtube.com/watch?v=uR2Q2Pn_zSU)
