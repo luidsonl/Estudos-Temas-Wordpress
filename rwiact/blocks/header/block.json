@@ -1,0 +1,11 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "rwiakt/header",
+    "title": "Header",
+    "description": "Header for Reakt theme",
+    "icon": "",
+    "textdomain": "rwiakt",
+    "editorScript": "file:./index.js"
+
+}
