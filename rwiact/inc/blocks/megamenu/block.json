@@ -3,7 +3,7 @@
     "apiVersion": 3,
     "name": "rwiakt/megamenu",
     "title": "Mega menu",
-    "category": "theme",
+    "category": "widgets",
     "description": "Mega menu for Rwiakt theme",
     "icon": "",
     "textdomain": "rwiakt",

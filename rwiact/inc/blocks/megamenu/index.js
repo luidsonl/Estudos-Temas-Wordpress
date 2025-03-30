@@ -1,10 +1,13 @@
-var registerBlockType = wp.blocks.registerBlockType;
+const registerBlockType = wp.blocks.registerBlockType;
+const createElement = wp.element.createElement;
 
-registerBlockType("rwiakt/megamenu",{
+registerBlockType("rwiakt/megamenu", {
+    title: "MegaMenu",
+    category: "widgets",
     edit: function(){
-        return 'Edit';
+        return createElement('h1', null, 'Edit');
     },
     save: function(){
-        return 'Save';
+        return createElement('h1', null, 'Save');
     },
 });
