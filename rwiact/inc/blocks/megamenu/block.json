@@ -1,9 +1,10 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "rwiakt/header",
-    "title": "Header",
-    "description": "Header for Reakt theme",
+    "name": "rwiakt/megamenu",
+    "title": "Mega menu",
+    "category": "theme",
+    "description": "Mega menu for Rwiakt theme",
     "icon": "",
     "textdomain": "rwiakt",
     "editorScript": "file:./index.js"

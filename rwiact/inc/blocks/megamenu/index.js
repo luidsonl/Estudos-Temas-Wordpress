@@ -1,6 +1,6 @@
 var registerBlockType = wp.blocks.registerBlockType;
 
-registerBlockType("rwiakt/header",{
+registerBlockType("rwiakt/megamenu",{
     edit: function(){
         return 'Edit';
     },
