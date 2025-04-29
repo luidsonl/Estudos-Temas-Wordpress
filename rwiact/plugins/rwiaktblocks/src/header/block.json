@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "rwiaktblocks/rwiakt-header",
+	"version": "0.1.0",
+	"title": "Rwiakt Header",
+	"category": "theme",
+	"icon": "smiley",
+	"description": "React header for wordpress",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "rwiaktblocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php",
+	"viewScript": "file:./view.js"
+}
