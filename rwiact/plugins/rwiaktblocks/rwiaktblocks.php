@@ -57,3 +57,19 @@ function rwiaktblocks_rwiaktblocks_block_init() {
 	}
 }
 add_action( 'init', 'rwiaktblocks_rwiaktblocks_block_init' );
+
+
+function register_rwiakt_block_category($categories) {
+
+    return array_merge(
+        array(
+            array(
+                'slug'  => 'rwiakt',
+                'title' => __('Rwiakt Blocks', 'rwiaktblocks'),
+                'icon'  => 'smiley'
+            ),
+        ),
+        $categories
+    );
+}
+add_filter('block_categories_all', 'register_rwiakt_block_category');

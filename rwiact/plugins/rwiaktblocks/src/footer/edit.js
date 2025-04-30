@@ -32,7 +32,10 @@ import './editor.scss';
 export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
-			{ __( 'Rwiakt Footer', 'rwiaktblocks' ) }
+			{ __(
+				'Rwiakt footer edit static',
+				'rwiaktblocks'
+			) }
 		</p>
 	);
 }

@@ -4,5 +4,5 @@
  */
 ?>
 <p <?php echo get_block_wrapper_attributes(); ?>>
-	<?php esc_html_e( 'Rwiakt Blocks – hello from a dynamic block!', 'rwiaktblocks' ); ?>
+	<?php esc_html_e( 'Rwiakt body front dynamic', 'rwiaktblocks' ); ?>
 </p>

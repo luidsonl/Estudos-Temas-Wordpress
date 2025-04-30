@@ -1,15 +1,15 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
-	'footer' => array(
+	'body' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'rwiaktblocks/rwiakt-footer',
+		'name' => 'rwiaktblocks/rwiakt-body',
 		'version' => '0.1.0',
-		'title' => 'Rwiakt Footer',
-		'category' => 'theme',
+		'title' => 'Rwiakt Body',
+		'category' => 'rwiakt',
 		'icon' => 'smiley',
-		'description' => 'React Footer for wordpress',
+		'description' => 'React body for wordpress',
 		'example' => array(
 			
 		),
@@ -23,15 +23,15 @@ return array(
 		'render' => 'file:./render.php',
 		'viewScript' => 'file:./view.js'
 	),
-	'header' => array(
+	'footer' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'rwiaktblocks/rwiakt-header',
+		'name' => 'rwiaktblocks/rwiakt-footer',
 		'version' => '0.1.0',
-		'title' => 'Rwiakt Header',
-		'category' => 'theme',
+		'title' => 'Rwiakt Footer',
+		'category' => 'rwiakt',
 		'icon' => 'smiley',
-		'description' => 'React header for wordpress',
+		'description' => 'Static block footer',
 		'example' => array(
 			
 		),
@@ -42,7 +42,27 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
-		'render' => 'file:./render.php',
+		'viewScript' => 'file:./view.js'
+	),
+	'header' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'rwiaktblocks/rwiakt-header',
+		'version' => '0.1.0',
+		'title' => 'Rwiakt Header',
+		'category' => 'rwiakt',
+		'icon' => 'smiley',
+		'description' => 'Static block header',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'rwiaktblocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
 		'viewScript' => 'file:./view.js'
 	)
 );
