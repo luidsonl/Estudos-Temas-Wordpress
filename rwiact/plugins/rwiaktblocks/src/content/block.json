@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "rwiaktblocks/rwiakt-content",
+	"version": "0.1.0",
+	"title": "Rwiakt Content",
+	"category": "rwiakt",
+	"icon": "smiley",
+	"description": "Static block content",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "rwiaktblocks",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
