@@ -16,6 +16,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+define( 'RWIAKTBLOCKS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 /**
  * Registers the block using a `blocks-manifest.php` file, which improves the performance of block type registration.
  * Behind the scenes, it also registers all assets so they can be enqueued

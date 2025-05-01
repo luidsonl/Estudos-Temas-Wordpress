@@ -4,7 +4,6 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -15,10 +14,13 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {Element} Element to render.
  */
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+
 export default function save() {
-	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Rwiakt content front static' }
-		</p>
-	);
+    const blockProps = useBlockProps.save();
+    return (
+        <div {...blockProps}>
+            <InnerBlocks.Content />
+        </div>
+    );
 }

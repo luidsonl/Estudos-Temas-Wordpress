@@ -9,7 +9,12 @@
 	"description": "Static block content",
 	"example": {},
 	"supports": {
-		"html": false
+		"html": false,
+        "inserter": true,
+        "multiple": true,
+        "reusable": true,
+        "anchor": true,
+        "innerBlocks": true
 	},
 	"textdomain": "rwiaktblocks",
 	"editorScript": "file:./index.js",
